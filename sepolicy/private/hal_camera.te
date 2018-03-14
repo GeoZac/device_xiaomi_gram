@@ -1,1 +1,4 @@
 get_prop(hal_camera, vendor_ro_camera_prop)
+
+# Allow /proc/stat access
+allow hal_camera proc_stat:file r_file_perms;
