@@ -29,6 +29,7 @@
 
 #include <fstream>
 #include <unistd.h>
+#include <vector>
 
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
@@ -40,22 +41,40 @@
 using android::base::GetProperty;
 using android::init::property_set;
 
+std::vector<std::string> ro_props_default_source_order = {
+    "",
+    "bootimage.",
+    "odm.",
+    "product.",
+    "system.",
+    "system_ext.",
+    "vendor.",
+};
 
-void property_override(char const prop[], char const value[])
+void property_override(char const prop[], char const value[], bool add = true)
 {
     prop_info *pi;
-    pi = (prop_info*) __system_property_find(prop);
+
+    pi = (prop_info *) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
-    else
+    else if (add)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
-void property_override_dual(char const system_prop[],
-    char const vendor_prop[], char const value[])
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-}
+
+void set_ro_build_prop(const std::string &prop, const std::string &value) {
+    for (const auto &source : ro_props_default_source_order) {
+        auto prop_name = "ro." + source + "build." + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    }
+};
+
+void set_ro_product_prop(const std::string &prop, const std::string &value) {
+    for (const auto &source : ro_props_default_source_order) {
+        auto prop_name = "ro.product." + source + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    }
+};
 
 void vendor_load_properties() {
     std::string region;
@@ -63,9 +82,9 @@ void vendor_load_properties() {
     // region = GetProperty("ro.boot.hwc", "GLOBAL");
     // sku = GetProperty("ro.boot.product.hardware.sku","pro");
 
-    property_override_dual("ro.product.model", "ro.vendor.product.model", "POCO M2 Pro");
-    property_override_dual("ro.product.device", "ro.product.vendor.device", "gram");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys");
+    set_ro_product_prop("model", "POCO M2 Pro");
+    set_ro_product_prop("device", "gram");
+    set_ro_build_prop("fingerprint", "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys");
     property_override("ro.build.description", "gram_in-user 11 RKQ1.200826.002 V12.0.1.0.RJPINXM release-keys");
     property_override("ro.product.mod_device", "gram_in_global");
 
