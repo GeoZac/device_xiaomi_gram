@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.lights-service.qti-gram
+
 # Overlays -- Override vendor ones
 PRODUCT_PACKAGES += \
     FrameworksResTarget \
