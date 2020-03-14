@@ -11,6 +11,10 @@ ro.charger.enable_suspend=true
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
+# Display blur
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1  
+
 # Graphics
 debug.sf.hw=1
 debug.gralloc.enable_fb_ubwc=1
