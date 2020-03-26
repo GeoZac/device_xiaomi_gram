@@ -3,3 +3,5 @@ type pps_socket, file_type;
 type sysfs_graphics, sysfs_type, fs_type;
 
 type sysfs_battery_supply, sysfs_type, fs_type;
+
+type proc_sched_updown_migrate, proc_type, fs_type;

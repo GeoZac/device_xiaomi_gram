@@ -1,0 +1,2 @@
+# Init
+allow init proc_sched_updown_migrate:file rw_file_perms;
