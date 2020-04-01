@@ -43,6 +43,10 @@ PRODUCT_PACKAGES += \
     DevicesOverlay \
     DevicesAndroidOverlay
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.2-service.gram
+
 # rro_overlays
 PRODUCT_PACKAGES += \
     WifiOverlay
