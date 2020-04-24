@@ -85,10 +85,24 @@ void vendor_load_properties() {
     // region = GetProperty("ro.boot.hwc", "GLOBAL");
     // sku = GetProperty("ro.boot.product.hardware.sku","pro");
 
-    set_ro_product_prop("model", "POCO M2 Pro");
-    set_ro_product_prop("device", "gram");
-    set_ro_build_prop("fingerprint", "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys");
-    property_override("ro.build.description", "gram_in-user 11 RKQ1.200826.002 V12.0.1.0.RJPINXM release-keys");
-    property_override("ro.product.mod_device", "gram_in_global");
+    std::string model;
+    std::string device;
+    std::string fingerprint;
+    std::string description;
+    std::string mod_device;
+
+    model = "POCO M2 Pro";
+    device = "gram";
+    fingerprint = "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys";
+    description = "gram_in-user 11 RKQ1.200826.002 V12.0.1.0.RJPINXM release-keys";
+    mod_device = "gram_in_global";
+
+    set_ro_build_prop("fingerprint", fingerprint);
+    set_ro_product_prop("device", device);
+    set_ro_product_prop("model", model);
+    property_override("ro.build.description", description.c_str());
+    if (mod_device != "") {
+        property_override("ro.product.mod_device", mod_device.c_str());
+    }
 
 }
