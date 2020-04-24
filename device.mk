@@ -43,6 +43,10 @@ PRODUCT_PACKAGES += \
     DevicesOverlay \
     DevicesAndroidOverlay
 
+# rro_overlays
+PRODUCT_PACKAGES += \
+    WifiOverlay
+
 # Partitions 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
