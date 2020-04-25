@@ -8,6 +8,9 @@ audio.sys.offload.pstimeout.secs=3
 # Charger
 ro.charger.enable_suspend=true
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Graphics
 debug.sf.hw=1
 debug.gralloc.enable_fb_ubwc=1
