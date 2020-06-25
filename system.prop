@@ -103,6 +103,9 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 
+# Set stock DPI
+ro.sf.lcd_density=440
+
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
