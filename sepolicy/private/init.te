@@ -4,6 +4,9 @@ allow init vendor_file:file mounton;
 # Allow init to mount vendor configs
 allow init vendor_configs_file:dir mounton;
 
+# Allow init to mount vendor overlay
+allow init vendor_overlay_file:dir mounton;
+
 # Init
 allow init proc_sched_updown_migrate:file rw_file_perms;
 
