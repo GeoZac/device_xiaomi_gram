@@ -37,6 +37,7 @@
 
 #include <aidl/android/hardware/power/BnPower.h>
 
+#include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
@@ -61,13 +62,50 @@ void setInteractive(bool interactive) {
    set_interactive(interactive ? 1:0);
 }
 
+int open_ts_input() {
+    int fd = -1;
+    DIR *dir = opendir("/dev/input");
+
+    if (dir != NULL) {
+        struct dirent *ent;
+
+        while ((ent = readdir(dir)) != NULL) {
+            if (ent->d_type == DT_CHR) {
+                char absolute_path[PATH_MAX] = {0};
+                char name[80] = {0};
+
+                strcpy(absolute_path, "/dev/input/");
+                strcat(absolute_path, ent->d_name);
+
+                fd = open(absolute_path, O_RDWR);
+                if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
+                    if (strcmp(name, "fts_ts") == 0 ||
+                            strcmp(name, "NVTCapacitiveTouchScreen") == 0)
+                        break;
+                }
+
+                close(fd);
+                fd = -1;
+            }
+        }
+
+        closedir(dir);
+    }
+
+    return fd;
+}
+
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(INFO) << "Power setMode: " << static_cast<int32_t>(type) << " to: " << enabled;
     switch(type){
         case Mode::DOUBLE_TAP_TO_WAKE:
-#ifdef TAP_TO_WAKE_NODE
             {
-            int fd = open(TAP_TO_WAKE_NODE, O_RDWR);
+            int fd = open_ts_input();
+            if (fd == -1) {
+                LOG(WARNING)
+                    << "DT2W won't work because no supported touchscreen input devices were found";
+                break;
+            }
             struct input_event ev;
             ev.type = EV_SYN;
             ev.code = SYN_CONFIG;
@@ -75,7 +113,6 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             write(fd, &ev, sizeof(ev));
             close(fd);
         } break;
-#endif
         case Mode::LOW_POWER:
         case Mode::EXPENSIVE_RENDERING:
         case Mode::DEVICE_IDLE:
