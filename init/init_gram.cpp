@@ -165,27 +165,49 @@ void workaround_cts_properties() {
 }
 
 void vendor_load_properties() {
+    std::string hwname;
     std::string region;
-    std::string sku;
-    // region = GetProperty("ro.boot.hwc", "GLOBAL");
-    // sku = GetProperty("ro.boot.product.hardware.sku","pro");
+    hwname = GetProperty("ro.boot.hwname", "");
+    region = GetProperty("ro.boot.hwc", "");
 
     std::string model;
     std::string device;
     std::string fingerprint;
     std::string description;
     std::string mod_device;
+    std::string brand;
 
-    model = "POCO M2 Pro";
-    device = "gram";
-    fingerprint = "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys";
-    description = "gram_in-user 11 RKQ1.200826.002 V12.0.1.0.RJPINXM release-keys";
-    mod_device = "gram_in_global";
+    if (hwname == "curtana") {
+        brand = "Redmi";
+        device = "curtana";
+        if (region == "India") {
+            model = "Redmi Note 9 Pro";
+            fingerprint = "Redmi/curtana_in/curtana:11/RKQ1.200826.002/V12.0.5.0.RJWINXM:user/release-keys";
+            description = "curtana_in-user 11 RKQ1.200826.002 V12.0.5.0.RJWINXM release-keys";
+            marketname = "Redmi Note 9 Pro";
+            mod_device = "curtana_in";
+        } else {
+            model = "Redmi Note 9S";
+            fingerprint = "Redmi/curtana_global/curtana:11/RKQ1.200826.002/V12.0.4.0.RJWMIXM:user/release-keys";
+            description = "curtana_global-user 11 RKQ1.200826.002 V12.0.4.0.RJWMIXM release-keys";
+            marketname = "Redmi Note 9S";
+            mod_device = "curtana_global";
+        }
+    } else if (hwname == "gram") {
+        brand = "POCO";
+        model = "POCO M2 Pro";
+        device = "gram";
+        fingerprint = "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys";
+        description = "gram_in-user 11 RKQ1.200826.002 V12.0.1.0.RJPINXM release-keys";
+        mod_device = "gram_in_global";
+    }
 
     set_ro_build_prop("fingerprint", fingerprint);
+    set_ro_product_prop("brand", brand);
     set_ro_product_prop("device", device);
     set_ro_product_prop("model", model);
     property_override("ro.build.description", description.c_str());
+    property_override("ro.build.display.id", description.c_str());
     if (mod_device != "") {
         property_override("ro.product.mod_device", mod_device.c_str());
     }
