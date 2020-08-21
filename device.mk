@@ -87,7 +87,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # rro_overlays
 PRODUCT_PACKAGES += \
-    WifiOverlay
+    WifiOverlay \
+    TetheringConfigOverlay
 
 # Partitions 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
