@@ -36,6 +36,10 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_PACKAGES += \
     Snap
 
+# Doze
+PRODUCT_PACKAGES += \
+    XiaomiDoze
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
