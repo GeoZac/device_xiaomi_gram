@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
 
+# Doze
+PRODUCT_PACKAGES += \
+    XiaomiDoze
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
