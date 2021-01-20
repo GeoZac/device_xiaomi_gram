@@ -14,6 +14,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Get non-open-source specific aspects
+$(call inherit-product, vendor/xiaomi/gram/gram-vendor.mk)
+
 # The first api level, device has been commercially launched on.
 PRODUCT_SHIPPING_API_LEVEL := 29
 
