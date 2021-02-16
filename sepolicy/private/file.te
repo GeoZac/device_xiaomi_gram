@@ -5,3 +5,9 @@ type sysfs_graphics, sysfs_type, fs_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
 
 type proc_sched_updown_migrate, proc_type, fs_type;
+
+# QS Info
+type sysfs_device_info, fs_type, sysfs_type;
+type sysfs_kgsl, sysfs_type, fs_type;
+type vendor_sysfs_kgsl, sysfs_type, fs_type;
+type vendor_sysfs_battery_supply, sysfs_type, fs_type;
