@@ -43,10 +43,6 @@ PRODUCT_PACKAGES += \
     DevicesOverlay \
     DevicesAndroidOverlay
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.gram
-
 # rro_overlays
 PRODUCT_PACKAGES += \
     WifiOverlay
@@ -54,3 +50,7 @@ PRODUCT_PACKAGES += \
 # Partitions 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.gram
