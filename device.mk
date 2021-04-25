@@ -54,3 +54,7 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.gram
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
