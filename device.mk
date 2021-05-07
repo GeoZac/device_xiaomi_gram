@@ -68,7 +68,8 @@ PRODUCT_PACKAGES += \
 
 # Livedisplay
 PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-sdm
+    lineage.livedisplay@2.0-service-sdm \
+    LiveDisplayOverlay
 
 # Overlays -- Override vendor ones
 PRODUCT_PACKAGES += \
