@@ -48,6 +48,10 @@ ro.incremental.enable=1
 # Radio
 persist.vendor.radio.mt_sms_ack=30
 
+# SoC
+ro.soc.manufacturer=QTI
+ro.soc.model=SM7125
+
 # USAP
 persist.device_config.runtime_native.usap_pool_enabled=true
 
