@@ -18,8 +18,10 @@ LOCAL_REQUIRED_MODULES := \
 LOCAL_SHARED_LIBRARIES := \
         libbase \
         libhardware \
-        libbinder_ndk \
-        android.hardware.light-V1-ndk_platform
+        libbinder_ndk
+
+LOCAL_STATIC_LIBRARIES := \
+        android.hardware.light-V1-ndk
 
 
 
