@@ -135,9 +135,6 @@ TARGET_SCREEN_DENSITY := 440
 include device/qcom/sepolicy/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/dev/input/event3"
-
 # Treble
 BOARD_VNDK_VERSION := current
 
