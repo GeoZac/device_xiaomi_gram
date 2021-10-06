@@ -19,3 +19,6 @@ debug.hwui.renderer=skiavk
 
 # Force triple frame buffers
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+
+# Google stuff
+ro.opa.eligible_device=true
