@@ -19,7 +19,7 @@ LOCAL_SHARED_LIBRARIES := \
         libbase \
         libhardware \
         libbinder_ndk \
-        android.hardware.light-ndk_platform
+        android.hardware.light-V1-ndk_platform
 
 
 
