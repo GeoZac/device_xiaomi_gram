@@ -9,12 +9,26 @@ persist.audio.fluence.voicerec=false
 ro.af.client_heap_size_kbyte=7168
 ro.config.vc_call_vol_steps=11
 ro.qc.sdk.audio.fluencetype=none
+ro.vendor.audio.voice.volume.boost=manual
+persist.vendor.ssr.restart_level=ALL_ENABLE
+persist.vendor.ssr.enable_ramdumps=1
 
 # Bluetooth
 persist.vendor.btstack.aac_frm_ctl.enabled=true
 persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.connect.peer_earbud=true
+persist.vendor.btstack.enable.twsplussho=true
+persist.vendor.btstack.enable.swb=true
+persist.vendor.btstack.enable.swbpm=true
 persist.vendor.service.bdroid.soc.alwayson=true
 ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.wipower=false
+
+# CoreSight STM
+persist.debug.coresight.config=stm-events
 
 # Dalvik
 dalvik.vm.dexopt.secondary=true
@@ -32,7 +46,9 @@ vendor.display.svi.config=1
 vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
 
 # HVDCP
+persist.vendor.cp.fcc_main_ua=400000
 persist.vendor.cp.taper_term_mv=6500
+persist.vendor.cp.qc3_step_offset_ua=800000
 
 # Media
 debug.stagefright.ccodec=1
@@ -44,7 +60,8 @@ media.stagefright.enable-player=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
-vendor.mm.enable.qcom_parser=131071983
+vendor.mm.enable.qcom_parser=16777199
+ro.media.recorder-max-base-layer-fps = 60
 
 # Netflix
 ro.netflix.bsp_rev=Q6250-19132-1
@@ -75,9 +92,12 @@ persist.vendor.radio.report_codec=1
 persist.vendor.radio.snapshot_enabled=1
 persist.vendor.radio.snapshot_timer=5
 ril.subscription.types=NV,RUIM
-ro.telephony.default_network=22,22
+ro.telephony.default_network=33,33
 ro.vendor.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=1
+
+# RIL
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
