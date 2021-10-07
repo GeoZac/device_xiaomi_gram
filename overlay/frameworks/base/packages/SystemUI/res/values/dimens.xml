@@ -20,4 +20,7 @@
     <!-- Need a longer slider for granular control,as custom volume steps are enabled for different streams -->
     <dimen name="volume_dialog_slider_height">252dp</dimen>
 
+    <dimen name="physical_power_button_center_screen_location_y">1100px</dimen>
+    <dimen name="physical_fingerprint_sensor_center_screen_location_y">1100px</dimen>
+
 </resources>
