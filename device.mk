@@ -55,10 +55,6 @@ TARGET_BOOTANIMATION_HALF_RES := true
 PRODUCT_PACKAGES += \
     Snap
 
-# Component override
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
-
 # Doze
 PRODUCT_PACKAGES += \
     XiaomiDoze
