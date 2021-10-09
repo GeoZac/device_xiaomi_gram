@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aicp_gram.mk
+    $(LOCAL_DIR)/lineage_gram.mk
 
 COMMON_LUNCH_CHOICES := \
-    aicp_gram-user \
-    aicp_gram-userdebug \
-    aicp_gram-eng
+    lineage_gram-user \
+    lineage_gram-userdebug \
+    lineage_gram-eng
