@@ -9,6 +9,8 @@ DEVICE_PATH := device/xiaomi/gram
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -69,6 +71,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += androidboot.memcg=1
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += kpti=off
 BOARD_KERNEL_CMDLINE += loop.max_part=7
@@ -147,6 +150,7 @@ TARGET_SCREEN_DENSITY := 440
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Treble
 BOARD_VNDK_VERSION := current
