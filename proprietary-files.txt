@@ -1,5 +1,8 @@
 # All unpinned blobs are extracted from POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys
 
+# Bluetooth
+system/etc/sysconfig/qti_whitelist.xml
+
 # CNE
 system_ext/framework/com.quicinc.cne.api-V1.1-java.jar
 system_ext/framework/com.quicinc.cne.constants-V1.0-java.jar
