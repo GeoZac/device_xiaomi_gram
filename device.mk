@@ -33,6 +33,15 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaacwrapper
 
+# Bluetooth Audio
+PRODUCT_PACKAGES += \
+    com.qualcomm.qti.bluetooth_audio@1.0 \
+    android.hardware.bluetooth@1.0.so \
+    android.hardware.bluetooth@1.1.so \
+    android.hardware.bluetooth.a2dp@1.0.so \
+    android.hardware.bluetooth.audio@2.0 \
+    android.hardware.bluetooth.audio@2.0-impl
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
