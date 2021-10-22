@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<!-- Xiaomi sm6250 specific LiveDisplay overlays -->
+<!-- Device specific LiveDisplay overlays -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.internal.livedisplay.gram"
     android:versionCode="1"
