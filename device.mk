@@ -85,7 +85,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.qcom.rc
+    init.qcom.rc \
+    init.aicp-gram.rc
 
 # Keylayout
 PRODUCT_COPY_FILES += \
