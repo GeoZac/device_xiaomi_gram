@@ -28,6 +28,10 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # A/B
 AB_OTA_UPDATER := false
 
+# Advanced Settings
+PRODUCT_PACKAGES += \
+    PartsBin
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
