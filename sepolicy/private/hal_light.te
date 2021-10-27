@@ -1,0 +1,2 @@
+# Allow hal_power to write to LED nodes
+allow hal_light sysfs_leds:file rw_file_perms;
