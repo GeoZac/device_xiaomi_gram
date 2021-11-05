@@ -32,7 +32,9 @@
          app, they can be remapped here. The format is
          "oldname:newname", one per entry. -->
     <string-array name="config_displayModeMappings" translatable="false">
+        <item>none1:dynamic</item>
         <item>none2:standard</item>
+        <item>none3:reading</item>
         <item>sRGB:srgb</item>
     </string-array>
 
