@@ -152,6 +152,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0
 
+# Shims
+PRODUCT_PACKAGES += \
+    lib-imsvt
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
