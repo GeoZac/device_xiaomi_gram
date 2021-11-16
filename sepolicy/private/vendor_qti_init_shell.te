@@ -3,4 +3,4 @@ allow vendor_qti_init_shell proc_sched_updown_migrate:file rw_file_perms;
 
 #For configfs permission
 allow vendor_qti_init_shell configfs:dir create_dir_perms;
-allow vendor_qti_init_shell configfs:file rw_file_perms;
+allow vendor_qti_init_shell configfs:file create_file_perms;

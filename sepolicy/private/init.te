@@ -12,4 +12,4 @@ allow init proc_sched_updown_migrate:file rw_file_perms;
 
 # Init - USB fastcharge
 allow init sysfs_fastcharge:dir search;
-allow init sysfs_fastcharge:file rw_file_perms;
+allow init sysfs_fastcharge:file create_file_perms;
