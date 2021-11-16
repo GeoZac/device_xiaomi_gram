@@ -1,0 +1,7 @@
+type vendor_thermal-engine, domain;
+type thermal_data_file, data_file_type, file_type;
+
+set_prop(vendor_thermal-engine, thermal_engine_prop)
+
+allow vendor_thermal-engine thermal_data_file:dir rw_dir_perms;
+allow vendor_thermal-engine thermal_data_file:file create_file_perms;
