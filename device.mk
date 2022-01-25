@@ -47,8 +47,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.so \
     android.hardware.bluetooth@1.1.so \
     android.hardware.bluetooth.a2dp@1.0.so \
-    android.hardware.bluetooth.audio@2.0 \
-    android.hardware.bluetooth.audio@2.0-impl
+    android.hardware.bluetooth.audio-impl
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -74,7 +73,7 @@ PRODUCT_COPY_FILES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2 \
+    FM2
     libqcomfm_jni \
     qcom.fmradio
 
