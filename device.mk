@@ -121,6 +121,11 @@ PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm \
     LiveDisplayOverlay
 
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/media_profiles_vendor.xml
+
+
 # Overlays -- Override vendor ones
 PRODUCT_PACKAGES += \
     FrameworksResTarget \
