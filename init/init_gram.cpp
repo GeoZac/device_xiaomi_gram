@@ -184,13 +184,13 @@ void vendor_load_properties() {
             model = "Redmi Note 9 Pro";
             fingerprint = "Redmi/curtana_in/curtana:11/RKQ1.200826.002/V12.0.5.0.RJWINXM:user/release-keys";
             description = "curtana_in-user 11 RKQ1.200826.002 V12.0.5.0.RJWINXM release-keys";
-            marketname = "Redmi Note 9 Pro";
+            // marketname = "Redmi Note 9 Pro";
             mod_device = "curtana_in";
         } else {
             model = "Redmi Note 9S";
             fingerprint = "Redmi/curtana_global/curtana:11/RKQ1.200826.002/V12.0.4.0.RJWMIXM:user/release-keys";
             description = "curtana_global-user 11 RKQ1.200826.002 V12.0.4.0.RJWMIXM release-keys";
-            marketname = "Redmi Note 9S";
+            // marketname = "Redmi Note 9S";
             mod_device = "curtana_global";
         }
     } else if (hwname == "gram") {

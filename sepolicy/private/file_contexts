@@ -41,7 +41,7 @@
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,usb-pdphy@1700/usbpd/usbpd0/otg_default/wakeup[0-9]+(/.*)?  u:object_r:sysfs_wakeup:s0
 
 # clean_scratch_files
-/system/bin/clean_scratch_files                                      u:object_r:clean_scratch_files_exec:s0
+# /system/bin/clean_scratch_files                                      u:object_r:clean_scratch_files_exec:s0
 
 # QSInfo
 /sys/devices/virtual/thermal/thermal_zone48/temp                     u:object_r:sysfs_device_info:s0
