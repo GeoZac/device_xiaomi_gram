@@ -197,8 +197,8 @@ void vendor_load_properties() {
         brand = "POCO";
         model = "POCO M2 Pro";
         device = "gram";
-        fingerprint = "POCO/gram_in/gram:11/RKQ1.200826.002/V12.0.1.1.RJPINXM:user/release-keys";
-        description = "gram_in-user 11 RKQ1.200826.002 V12.0.1.0.RJPINXM release-keys";
+        fingerprint = "POCO/gram_in/gram:12/RKQ1.211019.001/V14.0.5.0.SJPINXM:user/release-keys";
+        description = "gram_in-user 12 RKQ1.211019.001 V14.0.5.0.SJPINXM release-keys";
         mod_device = "gram_in_global";
     }
 
