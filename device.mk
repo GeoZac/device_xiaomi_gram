@@ -23,8 +23,8 @@ $(call inherit-product, vendor/xiaomi/gram/gram-vendor.mk)
 # The first api level, device has been commercially launched on.
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-PRODUCT_TARGET_VNDK_VERSION := 30
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
+PRODUCT_TARGET_VNDK_VERSION := 31
+PRODUCT_EXTRA_VNDK_VERSIONS := 31
 
 # A/B
 AB_OTA_UPDATER := false
